@@ -1,0 +1,370 @@
+{
+  "settings": {
+    "languages": [
+      "id"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "id"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "id": {
+        "settings": {
+          "locale": "id",
+          "trainByDomain": false,
+          "tag": "domain-manager-id",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hai": {
+            "intent": "greet",
+            "domain": "default"
+          },
+          "halo": {
+            "intent": "greet",
+            "domain": "default"
+          },
+          "pagi,selamat": {
+            "intent": "greet",
+            "domain": "default"
+          },
+          "apa,jam,sekarang": {
+            "intent": "ask.time",
+            "domain": "default"
+          },
+          "beri,tahu,tolong,waktu": {
+            "intent": "ask.time",
+            "domain": "default"
+          },
+          "kamu,nama,siapa": {
+            "intent": "ask.name",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greet": "default",
+          "ask.time": "default",
+          "ask.name": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hai",
+            "intent": "greet"
+          },
+          {
+            "domain": "default",
+            "utterance": "halo",
+            "intent": "greet"
+          },
+          {
+            "domain": "default",
+            "utterance": "selamat pagi",
+            "intent": "greet"
+          },
+          {
+            "domain": "default",
+            "utterance": "jam berapa sekarang",
+            "intent": "ask.time"
+          },
+          {
+            "domain": "default",
+            "utterance": "tolong beri tahu waktu",
+            "intent": "ask.time"
+          },
+          {
+            "domain": "default",
+            "utterance": "siapa nama kamu",
+            "intent": "ask.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "nama kamu siapa",
+            "intent": "ask.name"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "id",
+              "tag": "nlu-id",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hai": 1,
+              "halo": 1,
+              "selamat": 1,
+              "pagi": 1,
+              "jam": 1,
+              "apa": 1,
+              "sekarang": 1,
+              "tolong": 1,
+              "beri": 1,
+              "tahu": 1,
+              "waktu": 1,
+              "siapa": 1,
+              "nama": 1,
+              "kamu": 1
+            },
+            "intents": {
+              "greet": 1,
+              "ask.time": 1,
+              "ask.name": 1
+            },
+            "intentFeatures": {
+              "greet": {
+                "hai": 1,
+                "halo": 1,
+                "selamat": 1,
+                "pagi": 1
+              },
+              "ask.time": {
+                "jam": 1,
+                "apa": 1,
+                "sekarang": 1,
+                "tolong": 1,
+                "beri": 1,
+                "tahu": 1,
+                "waktu": 1
+              },
+              "ask.name": {
+                "siapa": 1,
+                "nama": 1,
+                "kamu": 1
+              }
+            },
+            "featuresToIntent": {
+              "hai": [
+                "greet"
+              ],
+              "halo": [
+                "greet"
+              ],
+              "selamat": [
+                "greet"
+              ],
+              "pagi": [
+                "greet"
+              ],
+              "jam": [
+                "ask.time"
+              ],
+              "apa": [
+                "ask.time"
+              ],
+              "sekarang": [
+                "ask.time"
+              ],
+              "tolong": [
+                "ask.time"
+              ],
+              "beri": [
+                "ask.time"
+              ],
+              "tahu": [
+                "ask.time"
+              ],
+              "waktu": [
+                "ask.time"
+              ],
+              "siapa": [
+                "ask.name"
+              ],
+              "nama": [
+                "ask.name"
+              ],
+              "kamu": [
+                "ask.name"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "id",
+                "tag": "nlu-id",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hai",
+                "halo",
+                "selamat",
+                "pagi",
+                "jam",
+                "apa",
+                "sekarang",
+                "tolong",
+                "beri",
+                "tahu",
+                "waktu",
+                "siapa",
+                "nama",
+                "kamu"
+              ],
+              "intents": [
+                "greet",
+                "ask.time",
+                "ask.name"
+              ],
+              "perceptrons": [
+                [
+                  7.484209060668945,
+                  7.536475658416748,
+                  3.9353668689727783,
+                  3.9353668689727783,
+                  -2.160665988922119,
+                  -2.160665988922119,
+                  -2.160665988922119,
+                  -1.6244324445724487,
+                  -1.6244324445724487,
+                  -1.6244324445724487,
+                  -1.6244324445724487,
+                  -2.1675355434417725,
+                  -2.1675355434417725,
+                  -2.1675355434417725,
+                  6.517462754064015
+                ],
+                [
+                  -1.4517208337783813,
+                  -1.4364053010940552,
+                  -0.8286975026130676,
+                  -0.8286975026130676,
+                  4.261438846588135,
+                  4.261438846588135,
+                  4.261438846588135,
+                  3.197864294052124,
+                  3.197864294052124,
+                  3.197864294052124,
+                  3.197864294052124,
+                  -0.7253639698028564,
+                  -0.7253639698028564,
+                  -0.7253639698028564,
+                  1.4895339609493754
+                ],
+                [
+                  -0.8223536610603333,
+                  -0.8146905899047852,
+                  -0.46812736988067627,
+                  -0.46812736988067627,
+                  -0.35416632890701294,
+                  -0.35416632890701294,
+                  -0.35416632890701294,
+                  -0.2873779237270355,
+                  -0.2873779237270355,
+                  -0.2873779237270355,
+                  -0.2873779237270355,
+                  4.482842922210693,
+                  4.482842922210693,
+                  4.482842922210693,
+                  0.8354393928393777
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "id",
+        "hai"
+      ],
+      [
+        "id",
+        "halo"
+      ],
+      [
+        "id",
+        "selamat pagi"
+      ],
+      [
+        "id",
+        "jam berapa sekarang"
+      ],
+      [
+        "id",
+        "tolong beri tahu waktu"
+      ],
+      [
+        "id",
+        "siapa nama kamu"
+      ],
+      [
+        "id",
+        "nama kamu siapa"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "id": {
+        "greet": [
+          {
+            "answer": "Hai juga! Ada yang bisa saya bantu?"
+          }
+        ],
+        "ask.time": [
+          {}
+        ],
+        "ask.name": [
+          {
+            "answer": "Saya chatbot pintar buatan kamu!"
+          }
+        ],
+        "None": [
+          {
+            "answer": "Maaf, saya belum mengerti maksud kamu."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
